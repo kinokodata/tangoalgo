@@ -1,0 +1,51 @@
+services:
+  # APIサーバー（バックエンド）
+  api:
+    image: node:20-alpine
+    container_name: tangoalgo-api
+    ports:
+      - "5001:5001"
+    environment:
+      NODE_ENV: development
+      API_PORT: 5001
+      FRONTEND_URL: http://localhost:13000
+      # Supabase設定
+      SUPABASE_URL: ${SUPABASE_URL}
+      SUPABASE_SERVICE_ROLE_KEY: ${SUPABASE_SERVICE_ROLE_KEY}
+      # JWT設定
+      JWT_SECRET: ${JWT_SECRET:-default-jwt-secret}
+    volumes:
+      - ./api:/app
+      - /app/node_modules
+    working_dir: /app
+    command: sh -c "npm install && npm run dev"
+    networks:
+      - tangoalgo_network
+
+  # Next.jsアプリ（フロントエンド）
+  frontend:
+    image: node:20-alpine
+    container_name: tangoalgo-frontend
+    ports:
+      - "13000:3000"
+    environment:
+      NODE_ENV: development
+      # APIサーバーのURL（コンテナ間通信）
+      NEXT_PUBLIC_API_URL: http://localhost:5001
+      # 内部API用（将来的にSupabaseを使う場合）
+      SUPABASE_URL: ${SUPABASE_URL}
+      SUPABASE_SERVICE_ROLE_KEY: ${SUPABASE_SERVICE_ROLE_KEY}
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    working_dir: /app
+    command: sh -c "npm install && npm run dev"
+    depends_on:
+      - api
+    networks:
+      - tangoalgo_network
+
+networks:
+  tangoalgo_network:
+    driver: bridge
