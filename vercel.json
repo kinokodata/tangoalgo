@@ -7,11 +7,11 @@
   "installCommand": "npm install",
   "devCommand": "npm run dev",
   "env": {
-    "NEXT_PUBLIC_API_URL": "@tangoalgo-api-url"
+    "NEXT_PUBLIC_API_URL": "https://tangoalgo.vercel.app"
   },
   "build": {
     "env": {
-      "NEXT_PUBLIC_API_URL": "@tangoalgo-api-url"
+      "NEXT_PUBLIC_API_URL": "https://tangoalgo.vercel.app"
     }
   }
 }
