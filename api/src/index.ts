@@ -18,13 +18,12 @@ const PORT = process.env.API_PORT || 5001
 const getAllowedOrigins = (): string[] => {
   const origins: string[] = []
 
-  // 本番環境のフロントエンドURL
+  // 本番環境のフロントエンドURL（環境変数から取得）
   if (process.env.FRONTEND_URL) {
-    origins.push(process.env.FRONTEND_URL)
+    // カンマ区切りで複数のURLを許可
+    const urls = process.env.FRONTEND_URL.split(',').map(url => url.trim())
+    origins.push(...urls)
   }
-
-  // Vercelデプロイ環境
-  origins.push('https://tangoalgo-web.vercel.app')
 
   // ローカル開発環境（開発時のみ）
   if (process.env.NODE_ENV !== 'production') {
