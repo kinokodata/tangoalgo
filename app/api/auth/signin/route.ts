@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient } from '@/lib/supabase-server'
+import { Database } from '@/types/database'
 
 export async function POST(request: NextRequest) {
   try {
@@ -32,7 +33,7 @@ export async function POST(request: NextRequest) {
       .from('profiles')
       .select('*')
       .eq('id', authData.user.id)
-      .single()
+      .single() as { data: Database['public']['Tables']['profiles']['Row'] | null }
 
     const response = NextResponse.json({
       success: true,

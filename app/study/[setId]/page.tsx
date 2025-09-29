@@ -414,7 +414,7 @@ function StudyContent() {
       <CardEditModal
         isOpen={showEditModal}
         onClose={() => setShowEditModal(false)}
-        card={currentCard}
+        card={currentCard || null}
         onSuccess={handleCardUpdate}
       />
     </div>

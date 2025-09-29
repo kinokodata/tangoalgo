@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient } from '@/lib/supabase-server'
 import { cookies } from 'next/headers'
+import { Database } from '@/types/database'
 
 export async function POST(request: NextRequest) {
   try {
@@ -29,14 +30,14 @@ export async function POST(request: NextRequest) {
     }
 
     // プロファイル作成
-    const { error: profileError } = await supabase
-      .from('profiles')
+    const { error: profileError } = await (supabase
+      .from('profiles') as any)
       .insert([
         {
           id: authData.user.id,
           username: username || null,
           display_name: username || email.split('@')[0],
-        },
+        } as Database['public']['Tables']['profiles']['Insert'],
       ])
 
     if (profileError) {
