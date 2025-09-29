@@ -14,11 +14,32 @@ dotenv.config()
 const app = express()
 const PORT = process.env.API_PORT || 5001
 
+// CORS設定
+const corsOptions = {
+  origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
+    // 許可するオリジンのリスト
+    const allowedOrigins = [
+      'http://localhost:3000',
+      'http://localhost:13000',
+      'https://tangoalgo-web.vercel.app',
+      'https://tangoalgo.vercel.app',
+      process.env.FRONTEND_URL
+    ].filter(Boolean)
+
+    // リクエストにoriginがない場合（Postmanなど）または許可リストに含まれる場合
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}
+
 // ミドルウェア
-app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:13000',
-  credentials: true
-}))
+app.use(cors(corsOptions))
 app.use(express.json())
 
 // ヘルスチェック

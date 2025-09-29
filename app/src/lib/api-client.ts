@@ -13,7 +13,8 @@ class ApiClient {
   private token: string | null = null
 
   constructor(baseURL: string = API_BASE_URL) {
-    this.baseURL = baseURL
+    // baseURLの末尾のスラッシュを削除
+    this.baseURL = baseURL.endsWith('/') ? baseURL.slice(0, -1) : baseURL
     // localStorageから認証トークンを取得
     if (typeof window !== 'undefined') {
       this.token = localStorage.getItem('auth_token')
