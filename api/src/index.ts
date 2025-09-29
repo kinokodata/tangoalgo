@@ -14,28 +14,49 @@ dotenv.config()
 const app = express()
 const PORT = process.env.API_PORT || 5001
 
-// CORS設定
+// CORS設定 - 本番環境とローカル開発環境のみ許可
+const getAllowedOrigins = (): string[] => {
+  const origins: string[] = []
+
+  // 本番環境のフロントエンドURL
+  if (process.env.FRONTEND_URL) {
+    origins.push(process.env.FRONTEND_URL)
+  }
+
+  // Vercelデプロイ環境
+  origins.push('https://tangoalgo-web.vercel.app')
+
+  // ローカル開発環境（開発時のみ）
+  if (process.env.NODE_ENV !== 'production') {
+    origins.push('http://localhost:3000')
+    origins.push('http://localhost:13000')
+  }
+
+  return origins
+}
+
 const corsOptions = {
   origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
-    // 許可するオリジンのリスト
-    const allowedOrigins = [
-      'http://localhost:3000',
-      'http://localhost:13000',
-      'https://tangoalgo-web.vercel.app',
-      'https://tangoalgo.vercel.app',
-      process.env.FRONTEND_URL
-    ].filter(Boolean)
+    const allowedOrigins = getAllowedOrigins()
 
-    // リクエストにoriginがない場合（Postmanなど）または許可リストに含まれる場合
-    if (!origin || allowedOrigins.includes(origin)) {
+    // 開発環境ではoriginがない場合も許可（Postmanなど）
+    if (process.env.NODE_ENV !== 'production' && !origin) {
+      callback(null, true)
+      return
+    }
+
+    // 許可リストに含まれる場合のみ許可
+    if (origin && allowedOrigins.includes(origin)) {
       callback(null, true)
     } else {
+      console.log(`CORS blocked: ${origin} is not in allowed list:`, allowedOrigins)
       callback(new Error('Not allowed by CORS'))
     }
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  maxAge: 86400 // プリフライトリクエストのキャッシュ時間（24時間）
 }
 
 // ミドルウェア
