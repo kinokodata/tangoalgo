@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* カスタムスタイル */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+/* フラッシュカードの3D効果 */
+.flashcard-container {
+  perspective: 1000px;
+  width: 100%;
+  height: 300px;
+}
+
+.flashcard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flashcard.flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
+}
+
+/* プログレスバーのグラデーション効果 */
+.progress-gradient {
+  background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+}
+
+/* ロゴのグラデーション */
+.logo-gradient {
+  background: linear-gradient(90deg, #3b82f6 0%, #3b82f6 18%, #10b981 40%, #10b981 60%, #3b82f6 82%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* フォントを明示的に指定してLを大文字で表示 */
+  font-family: 'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif;
+  font-weight: 600;
+}
+
+/* ボタンのホバー効果 */
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-blue-600 hover:shadow-lg active:scale-95;
+  }
+
+  .btn-success {
+    @apply bg-success text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-green-600 hover:shadow-lg active:scale-95;
+  }
+
+  .btn-error {
+    @apply bg-error text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-red-600 hover:shadow-lg active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-gray-300 hover:shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-gray-200 disabled:hover:shadow-none;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-blue-600 hover:shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-primary disabled:hover:shadow-none;
+  }
+}
+
+/* カード影効果 */
+.card-shadow {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* アニメーション */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
