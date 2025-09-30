@@ -1,0 +1,51 @@
+表面の単語,表面のヒント,表面の説明,裏面の単語,裏面のヒント,裏面の説明
+SWOT分析,強み弱み分析,企業の強み・弱み・機会・脅威を分析,SWOT Analysis,Strengths・Weaknesses・Opportunities・Threats,内部環境と外部環境を分析して戦略立案
+PPM,製品管理マトリクス,事業や製品を市場成長率とシェアで分類,Product Portfolio Management,花形・金のなる木・問題児・負け犬,BCGマトリクス。資源配分の意思決定に使用
+BSC,バランススコアカード,4つの視点から業績を評価する手法,Balanced Scorecard,財務・顧客・業務・学習,戦略を可視化して実行管理
+KGI,重要目標達成指標,最終的な目標の達成度を測る指標,Key Goal Indicator,経営目標の指標,売上高・利益率など最終ゴール
+KPI,重要業績評価指標,目標達成のプロセスを測る指標,Key Performance Indicator,中間目標の指標,KGI達成のための先行指標
+CSF,重要成功要因,経営目標達成のために重要な要因,Critical Success Factor,成功の鍵,KPIを設定する際の基準
+コアコンピタンス,中核能力,他社が模倣困難な自社の中核的能力,Core Competence,競争優位の源泉,技術力・ノウハウなど独自の強み
+ベンチマーキング,優良事例研究,優れた他社の手法を学んで改善,Benchmarking,ベストプラクティス,業界リーダーの手法を分析・導入
+BPR,業務プロセス再設計,業務プロセスを根本的に見直し再設計,Business Process Re-engineering,抜本的改革,既存の枠組みを超えた革新的改善
+BPM,業務プロセス管理,業務プロセスを継続的に改善する管理手法,Business Process Management,PDCAサイクル,プロセスの可視化・分析・改善
+SCM,供給連鎖管理,調達から販売まで供給連鎖全体を最適化,Supply Chain Management,サプライチェーン,在庫削減・リードタイム短縮
+CRM,顧客関係管理,顧客との関係を管理し顧客満足度向上,Customer Relationship Management,顧客中心経営,顧客データベースで個別対応
+ERP,統合基幹業務システム,企業の基幹業務を統合管理するシステム,Enterprise Resource Planning,経営資源計画,会計・人事・生産・販売を統合
+SFA,営業支援システム,営業活動を支援し効率化するシステム,Sales Force Automation,営業の自動化,顧客情報・商談履歴を一元管理
+BI,ビジネスインテリジェンス,経営データを分析して意思決定支援,Business Intelligence,データ分析ツール,データウェアハウス・OLAP・データマイニング
+RPA,業務自動化,定型業務をソフトウェアロボットで自動化,Robotic Process Automation,デジタルレイバー,人間の操作を模倣して自動実行
+M&A,企業買収・合併,企業の合併や買収による事業拡大,Mergers and Acquisitions,TOB・MBO,シナジー効果を狙う経営戦略
+アライアンス,企業提携,複数企業が協力して事業を行う提携,Alliance,戦略的提携,技術提携・販売提携・資本提携
+CSR,企業の社会的責任,企業が社会に対して果たすべき責任,Corporate Social Responsibility,ステークホルダー重視,環境保護・社会貢献・コンプライアンス
+コーポレートガバナンス,企業統治,企業経営を監視・統制する仕組み,Corporate Governance,内部統制,取締役会・監査役による経営監視
+コンプライアンス,法令遵守,法令や社会規範を守ること,Compliance,企業倫理,内部統制の重要要素
+内部統制,経営管理体制,業務の適正を確保する体制,Internal Control,J-SOX法対応,財務報告の信頼性確保
+リスクマネジメント,危機管理,企業のリスクを管理し損失を最小化,Risk Management,リスクの特定・評価・対処,事業継続性の確保
+BCP,事業継続計画,災害時も事業を継続するための計画,Business Continuity Plan,緊急時対応,重要業務の特定と復旧計画
+SaaS,サービスとしてのソフト,ソフトウェアをサービスとして提供,Software as a Service,クラウドサービス,Gmail・Office365など。月額課金
+PaaS,サービスとしての基盤,開発環境をサービスとして提供,Platform as a Service,開発プラットフォーム,AWS・Azure・GCPの開発環境
+IaaS,サービスとしてのインフラ,インフラをサービスとして提供,Infrastructure as a Service,仮想サーバ・ストレージ,EC2・Azure VMなど。従量課金
+IoT,モノのインターネット,あらゆるモノをインターネットに接続,Internet of Things,センサーネットワーク,スマート家電・工場の見える化
+AI,人工知能,人間の知能を模倣するコンピュータ技術,Artificial Intelligence,機械学習・深層学習,画像認識・自然言語処理・予測分析
+ビッグデータ,大規模データ,従来では扱えない大規模データ,Big Data,3V（Volume・Variety・Velocity）,大量・多様・高速なデータ
+ブロックチェーン,分散台帳技術,改ざん困難な分散型データベース技術,Blockchain,暗号資産の基盤,取引履歴を連鎖的に記録
+フィンテック,金融技術革新,ITを活用した革新的な金融サービス,FinTech,Financial Technology,キャッシュレス決済・ロボアドバイザー
+シェアリングエコノミー,共有経済,資産やサービスを共有する経済モデル,Sharing Economy,Uber・Airbnb,遊休資産の有効活用
+サブスクリプション,定額課金,定期的に料金を支払うビジネスモデル,Subscription,継続課金モデル,NetflixやSpotifyなど月額制サービス
+プラットフォームビジネス,場の提供,取引の場を提供するビジネスモデル,Platform Business,マッチング,Amazon・楽天・メルカリなど
+API,プログラム接続,ソフトウェア間の接続仕様,Application Programming Interface,REST・SOAP,外部サービスとの連携を実現
+オープンイノベーション,外部連携革新,外部の技術やアイデアを活用した革新,Open Innovation,産学連携,自前主義からの脱却
+DX,デジタル変革,デジタル技術による事業変革,Digital Transformation,ビジネスモデル革新,単なるIT化を超えた変革
+SDGs,持続可能な開発目標,国連が定めた17の持続可能な開発目標,Sustainable Development Goals,2030年目標,貧困・環境・教育など包括的目標
+ESG,環境・社会・企業統治,投資判断の新基準,Environment・Social・Governance,持続可能性重視,企業の長期的価値を評価
+著作権,創作物の権利,創作物に対する排他的権利,Copyright,複製権・公衆送信権,プログラムも著作物。保護期間70年
+特許権,発明の権利,発明に対する独占的権利,Patent Right,出願から20年,技術的思想の創作を保護
+商標権,ブランドの権利,商品・サービスの識別標識の権利,Trademark Right,登録から10年更新可,ロゴ・商品名を保護
+営業秘密,企業秘密,秘密管理された有用な技術・営業情報,Trade Secret,不正競争防止法,顧客リスト・製造ノウハウ
+個人情報保護法,個人情報の保護,個人情報の適切な取扱いを定めた法律,Personal Information Protection Act,同意・目的外利用禁止,5000件以上で事業者規制
+不正アクセス禁止法,不正侵入禁止,コンピュータへの不正アクセスを禁止,Unauthorized Access Prohibition Act,ID・パスワード盗用禁止,罰則3年以下の懲役
+電子署名法,電子印鑑,電子署名の法的効力を定めた法律,Electronic Signature Act,認証局の規定,電子署名を手書き署名と同等に
+プロバイダ責任制限法,ISP免責,プロバイダの責任範囲を制限する法律,Provider Liability Limitation Act,削除と発信者情報開示,違法情報への対応を規定
+労働者派遣法,派遣労働規制,労働者派遣事業を規制する法律,Worker Dispatch Act,偽装請負禁止,IT技術者の派遣も対象
+下請法,下請保護,下請事業者を保護する法律,Subcontract Act,支払遅延・減額禁止,システム開発の下請けも対象
